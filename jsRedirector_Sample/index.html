@@ -1,0 +1,61 @@
+<html>
+<head>
+<!--
+	Free example code for the jsRedirector.
+	Written by Brian Rollins (me@brianrollins.com)
+	Find more stuff at www.BrianRollins.com
+-->
+<title>jsRedirector</title>
+<style>
+	body {
+		font-family: Calibri, Arial, sans-serif;
+		color: #1E1C21;
+		background-color:#F1E9DC;
+		}
+</style>
+<script src = "jsRedirector.js"></script>
+<script>
+//It's probably cleaner to store this in an external file, 
+//but it's here inline for the example.
+var urls = {
+	home : {
+		title : "Home Page",
+		url : "http://www.brianrollins.com"
+	},
+	google : {
+		title : "Google",
+		url : "http://www.google.com"
+	},
+	youtube : {
+		title : "YouTube",
+		url : "http://www.youtube.com"
+	},
+	facebook : {
+		title : "Facebook",
+		url : "http://www.facebook.com"
+	},
+	twitter : {
+		title : "Twitter",
+		url : "http://www.twitter.com"
+	}
+};
+var response = jsRedirector.init(urls, true);
+
+</script>
+</head>
+
+ <body>
+ <h1 id = "message">Loading...</h1>
+ 
+ <script>
+//This adds some optional user feedback based on the response from jsRedirector.
+if (response.loaded && response.go) {
+	document.getElementById("message").innerHTML = "Redirecting to " + response.title;
+} else if (response.loaded && !response.go) {
+	document.getElementById("message").innerHTML = "Data loaded successfully.";
+} else {
+	document.getElementById("message").innerHTML = "There was a problem with the data retrieved. Unable to redirect you. Sorry.";
+}
+</script>
+</body>
+</html>
