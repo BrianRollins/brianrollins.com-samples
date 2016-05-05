@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {font-family:"Open Sans", sans-serif; background-color: #eee;}
+
+a {color:navy; text-decoration: none;}
+
+footer {padding-top:20px;}
+
+.noteDate {font-size: small; text-align: right;}
+
+#wrapper {display:inline-block;}
+
+.notes {
+  box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
+  
+  width:300px;
+  height:300px;
+  padding: 10px;
+  margin:10px;
+  float:left;
+}
+  
+#firstNote {
+  background-color: #eae672;
+  transform: rotate(2deg);
+  
+}
+#secondNote {
+  background-color: lightblue;
+  transform: rotate(-1deg);
+}
+#thirdNote {
+  background-color: lightgreen;
+  transform: rotate(1deg);
+}
